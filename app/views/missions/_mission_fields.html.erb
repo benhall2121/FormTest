@@ -1,0 +1,7 @@
+<div class="fields mission_fields_wrapper" style="border:1px solid gray; padding:10px; margin:10px 0;">
+  <%= f.label :title, "Title" %><br />
+  <%= f.text_field :title, :class => 'mission_title' %><br />
+  <%= f.label :description, "Description" %><br />
+  <%= f.text_area :description, :rows => 3, :class => 'mission_desc' %><br />
+  <%= link_to_remove_fields "remove", f %>
+</div>

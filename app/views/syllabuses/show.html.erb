@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Syllabus Title:</b>
+  <%= @syllabus.title %><br />
+</p>
+
+<% @missions.each do |m| %>
+  <div style="margin:10px 0; padding:10px; border:1px solid gray;">
+    <b>Mission Title:</b>
+    <%= m.title %><br />
+    <b>Mission Description:</b>
+    <%= m.description %><br />
+  </div>
+<% end %>
+
+
+<%= link_to 'Edit', edit_syllabus_path(@syllabus) %> |
+<%= link_to 'Back', syllabuses_path %>

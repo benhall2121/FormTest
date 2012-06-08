@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  syllabus_id: 1
+  mission_id: 1
+
+two:
+  syllabus_id: 1
+  mission_id: 1
