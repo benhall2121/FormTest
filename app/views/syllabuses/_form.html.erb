@@ -30,8 +30,9 @@
 <div style="border:2px solid black;">
   <h1>Missions</h1>
   <% @missions.each do |m| %>
-    <span class="add_mission" id="<%= m.id %>"><%= m.title %></span><br/>
+    <%= check_box_tag 'mission_id', m.id, false, :class => 'mission_ids' %><%= m.title %><br/>
   <% end %>
+  <%= button_to "Import", '', :id => 'import_missions' %>
 </div>
 
 

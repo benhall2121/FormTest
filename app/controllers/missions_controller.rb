@@ -3,7 +3,7 @@ class MissionsController < ApplicationController
   # GET /missions.xml
 
   def mission_info
-    @mission = Mission.find(params[:id])
+    @missions = Mission.find(:all, :conditions => ['id in (?)', params[:ids]])
     respond_to do |format|
       format.js
     end

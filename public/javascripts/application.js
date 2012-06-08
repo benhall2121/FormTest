@@ -9,9 +9,20 @@ jQuery.ajaxSetup({
 
 $(document).ready(function() {
 		
-  $('.add_mission').click(function(){
-  	this_id = $(this).attr('id');
-  	$.post('/mission_info', {"id": this_id}, null, 'script');
+  $('#import_missions').click(function(){
+    mission_ids = new Array();
+
+    $("input:checkbox[class=mission_ids]:checked").each(function() {
+       mission_ids.push($(this).val());
+    });
+
+    if(mission_ids.length == 0){
+      alert("please select a mission.");
+    } else {
+  	  $.post('/mission_info', {"ids": mission_ids}, null, 'script');
+    }
+
+    return false;
   });
   
 });

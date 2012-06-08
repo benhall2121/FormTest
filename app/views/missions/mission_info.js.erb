@@ -1,4 +1,11 @@
 
+<% @missions.each do |mission| %>
   $('#add-missions-button').trigger('click');
-  $('div.mission_fields_wrapper').last().find('.mission_title').val('<%= escape_javascript(@mission.title.to_s) %>');
-  $('div.mission_fields_wrapper').last().find('.mission_desc').text('<%= escape_javascript(@mission.description.to_s) %>');
+  $('div.mission_fields_wrapper').last().find('.mission_title').val('<%= escape_javascript(mission.title.to_s) %>');
+  $('div.mission_fields_wrapper').last().find('.mission_desc').text('<%= escape_javascript(mission.description.to_s) %>');
+<% end %>
+	
+$('input[type=checkbox]').each(function() { 
+  this.checked = false; 
+}); 
+
