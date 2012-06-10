@@ -1,10 +1,19 @@
 
 <% @missions.each do |mission| %>
+
   $('#add-missions-button').trigger('click');
+
   $('div.mission_fields_wrapper').last().find('.mission_title').val('<%= escape_javascript(mission.title.to_s) %>');
-  $('div.mission_fields_wrapper').last().find('.mission_desc').text('<%= escape_javascript(mission.description.to_s) %>');
+ 
+  //Get the ID of the newly created ckeditor textarea - It should be the last textarea
+  last_textarea_id = $('textarea').last().attr('id');
+  //Get the description from your mission data - Make sure you make the ascii characters as html characters
+  new_desc = '<%= escape_javascript(mission.description.to_s) %>'.replace( /&lt;/g, '<' ).replace( /&gt;/g, '>' ).replace( /&amp;nbsp;/g, ' ' );
+  //Replace the text in the new text area
+  CKEDITOR.instances[last_textarea_id].setData(new_desc);
 <% end %>
 	
+//Uncheck all the checboxes	
 $('input[type=checkbox]').each(function() { 
   this.checked = false; 
 }); 
