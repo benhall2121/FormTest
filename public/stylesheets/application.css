@@ -59,3 +59,8 @@ div.field, div.actions {
   color:red;
   cursor:pointer;
 }
+
+.background_image_css{
+  background-image:url('../images/X17.jpg');
+  background-repeat:no-repeat;
+}

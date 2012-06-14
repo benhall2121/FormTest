@@ -6,3 +6,4 @@ gem 'mysql2', '< 0.3'
 
 gem 'mime-types'
 gem 'ckeditor', '3.6.3'
+gem "twitter-bootstrap-rails"
